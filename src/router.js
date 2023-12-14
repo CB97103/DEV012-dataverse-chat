@@ -40,13 +40,11 @@ if (ROUTES[pathname]){
     // render the correct view passing the value of props
     // add the view element to the DOM root element
   } 
-  
+  //Crea transiciones de página sin realizar solicitudes al servidor para cargar nuevas páginas completas.
   export const navigateTo = (pathname, properties = {}) => {
     // update window history with pushState
-    const URLvisited = pathname; // our Hostname would be localhost:3000
-    console.log (navigateTo);
-    history.pushState({}, "", URLvisited); 
-
+    const URLvisited = window.location.pathname; // our Hostname would be localhost:3000
+    window.history.pushState({}, "", URLvisited); 
     // render the view with the pathname and props
     renderView(pathname, properties);
   }

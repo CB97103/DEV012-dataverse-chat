@@ -1,11 +1,18 @@
 import { header } from "../components/header.js";
+import { navigateTo } from "../router.js";
 import { footer } from "../components/footer.js";
+import { homeBtn } from "../components/homeButton.js";
 
 export const apiKey = () => {
   const section = document.createElement("section");
   section.appendChild(header());
+  section.appendChild(homeBtn());
   section.appendChild(apiKeyView());
   section.appendChild(footer());
+
+  const homeButton = section.querySelector(".homeButton");
+  homeButton.addEventListener("click",() => navigateTo("/"));
+
   return section;
 };
 
