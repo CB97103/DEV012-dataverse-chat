@@ -1,7 +1,5 @@
-
-
 export const navBar = () => {
-    const htmlNav = `<nav>
+  const htmlNav = `<nav>
     <i class="fa-solid fa-house"></i>
     <input
       id="inputFilter"
@@ -72,8 +70,8 @@ export const navBar = () => {
   <div class="metrics"> <br/> </div>
   <p class="compute-stats"></p>
   <div id="noResultsFound"></div>`; //Creates a template string
-    const nodoNavB = document.createElement("nav");// Creates a Nodo 
-    nodoNavB.innerHTML = htmlNav;
-    nodoNavB.classList.add("navComponent");
-    return nodoNavB;
-}
+  const nodoNavB = document.createElement("nav"); // Creates a Nodo
+  nodoNavB.innerHTML = htmlNav;
+  nodoNavB.classList.add("navComponent");
+  return nodoNavB;
+};
