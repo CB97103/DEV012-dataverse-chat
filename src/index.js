@@ -2,7 +2,7 @@
 import {setRoutes, setRootElement, onURLChange} from './router.js';
 import {home} from './views/home.js';
 import {errorPage} from './views/errorPage.js';
-import {apiKey} from './views/apiKey.js';
+import {apiKeyPage} from './views/apiKeyPage.js';
 import {details} from './views/details.js';
 import {panel} from './views/panel.js';
 
@@ -11,7 +11,7 @@ import {panel} from './views/panel.js';
 const routes = {
   '/': home,
   '/errorPage': errorPage,
-  '/apiKey': apiKey,
+  '/apiKeyPage': apiKeyPage,
   '/details': details,
   '/panel': panel,
 };

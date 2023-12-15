@@ -128,7 +128,7 @@ metricsContainer.appendChild(totalMetricsElement);
 const chatButton = section.querySelector("#chat");
 const apiKeyButton = section.querySelector("#apiKey");
 chatButton.addEventListener("click", () => navigateTo("/panel"));
-apiKeyButton.addEventListener("click", () => navigateTo("/apiKey"));
+apiKeyButton.addEventListener("click", () => navigateTo("/apiKeyPage"));
 
  return section;
 };

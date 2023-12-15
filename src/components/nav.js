@@ -7,6 +7,7 @@ export const navBar = () => {
       id="inputFilter"
       name="searchButton"
       type="search"
+      img.src = "./media/iconolupa.png";
       placeholder="Buscar película..."
     />
     <label for="genre"></label>

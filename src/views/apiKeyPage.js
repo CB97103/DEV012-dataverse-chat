@@ -2,8 +2,9 @@ import { header } from "../components/header.js";
 import { navigateTo } from "../router.js";
 import { footer } from "../components/footer.js";
 import { homeBtn } from "../components/homeButton.js";
+import { chatCompletions } from "../lib/openAiKey.js";
 
-export const apiKey = () => {
+export const apiKeyRender = () => {
   const section = document.createElement("section");
   section.appendChild(header());
   section.appendChild(homeBtn());
@@ -19,7 +20,7 @@ export const apiKey = () => {
 export const apiKeyView = () => {
   const apiViewHTML = `<h2>API KEY</h2> 
   <p class="apiText">¡Para interactuar con las péliculas, es necesario que ingreses tu APIKEY!</p>
-  <input name="apiKey"
+  <input class="apiKeyInput"
   type="text"
   placeholder="INGRESA TU API KEY..."/>
   <button id="clearApiButton">Limpiar</button>
@@ -30,3 +31,10 @@ export const apiKeyView = () => {
 
   return nodoApiView;
 };
+
+chatCompletions(apiKey, data, {
+  model: "gpt-3.5-turbo",
+  messages:[]
+}).then(() =>{
+
+})

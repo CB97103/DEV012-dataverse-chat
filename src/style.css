@@ -15,22 +15,24 @@ body {
   overflow-y: scroll;
 }
 header {
-  height: 230px;
+  height: 210px;
   font-family: "Bleak Chop";
   background-color: #ece9e2;
   padding-bottom: 40px;
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 40px;
   color: #ec004a;
   font-family: "Bleak Chop";
   margin-top: 0px;
   letter-spacing: 2px;
 }
 h2 {
-  padding: 30px;
+  padding: 170px 5px 0px 0px;
   text-align: center;
+  font-family: "Bleak Chop";
+  letter-spacing: 1px;
 }
 
 .error-img {
@@ -157,6 +159,7 @@ p {
   color:#ec004a;
   text-align: center;
   padding: 5px 0px;
+  font-family: "Bleak Chop";
 
 }
 ul {
@@ -239,6 +242,8 @@ dd[itemprop="year"] {
 }
 .apiText{
   color:#010101;
+  font-family: "Bleak Chop";
+  font-size: 30px;
 }
 #saveApiButton, #clearApiButton{
   font-size: 15px;
