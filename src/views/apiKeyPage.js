@@ -2,7 +2,7 @@ import { header } from "../components/header.js";
 import { navigateTo } from "../router.js";
 import { footer } from "../components/footer.js";
 import { homeBtn } from "../components/homeButton.js";
-import { chatCompletions } from "../lib/openAiKey.js";
+import { chatCompletions } from "../lib/openAiKey.js"
 
 export const apiKeyRender = () => {
   const section = document.createElement("section");
