@@ -1,23 +1,32 @@
-// crea arrow function para creación 
-import data from "../data/dataset.js"
+import data from "../data/dataset.js";
 
 
-export const chatCompletions = (apiKey, data) => {
+// Envia petición de la api al backend 
+//Fetch client - asycroni method (proceso paralelo)
+const endpoint = 'https://api.openai.com/v1/chat/completions'; 
+const moviesByName = data.map(Element => Element.name);
 
-    fetch ("https://api.openai.com/v1/chat/completions",{ //.fetch es una promesa
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer $[API]`,
+export function getOpenIAapi(moviesByName, userText){
+const apiKey = localStorage.getItem("apiKey");
+console.log(apiKey);
 
-        },
-        body:JSON.stringify(data),
-    }).then((responseJSON) => {  //Crea la promesa
-responseJSON.json().then(response => {
-    return response;
+
+ const result = fetch(endpoint, {
+    method: "POST",
+
+    headers:{
+"Content-Type": "application/json",
+"Authorization": `Bearer ${apiKey} `
+    },
+    body: {
+        "model": "gpt-3.5-turbo",
+        "messages":[
+            {
+                "role": "system",
+                "content": "hello"
+            }
+        ]
+    }
 })
-    })
-
-    
-
+return result;
 }

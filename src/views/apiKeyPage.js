@@ -2,19 +2,18 @@ import { header } from "../components/header.js";
 import { navigateTo } from "../router.js";
 import { footer } from "../components/footer.js";
 import { homeBtn } from "../components/homeButton.js";
-import { chatCompletions } from "../lib/openAiKey.js"
 
-export const apiKeyRender = () => {
+export const apiKeyPage = () => {
   const section = document.createElement("section");
   section.appendChild(header());
   section.appendChild(homeBtn());
   section.appendChild(apiKeyView());
   section.appendChild(footer());
 
-  const homeButton = section.querySelector(".homeButton");
-  homeButton.addEventListener("click",() => navigateTo("/"));
+const homeButton = section.querySelector(".homeButton");
+homeButton.addEventListener("click",() => navigateTo("/"));
 
-  return section;
+return section;
 };
 
 export const apiKeyView = () => {
@@ -32,9 +31,3 @@ export const apiKeyView = () => {
   return nodoApiView;
 };
 
-chatCompletions(apiKey, data, {
-  model: "gpt-3.5-turbo",
-  messages:[]
-}).then(() =>{
-
-})

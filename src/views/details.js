@@ -2,6 +2,7 @@ import { header } from "../components/header.js";
 import { homeBtn } from "../components/homeButton.js";
 import { navigateTo } from "../router.js";
 import { footer } from "../components/footer.js";
+import { getOpenIAapi } from "../lib/openAIKey.js";
 
 export const details = () => {
   const section = document.createElement("section");
@@ -24,3 +25,7 @@ export const createDetailsMessage = () => {
 
   return nodoDetailsElement;
 };
+
+console.log(getOpenIAapi());
+
+

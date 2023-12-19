@@ -1,4 +1,4 @@
-
+import { navigateTo } from "../router.js";
 
 export const renderData = (data) => { //el ciclo es independiente del html 
     let htmlCards = "";
@@ -20,5 +20,18 @@ export const renderData = (data) => { //el ciclo es independiente del html
     });
     nodoCards.innerHTML = htmlCards;// Convierte el string en un HTML
     nodoCards.classList.add("cardsContainer");
+    
+    const savedApi = localStorage.getItem("apiKey");
+    nodoCards.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    if (savedApi === null) {
+    navigateTo("/apiKeyPage");
+    }else {
+    navigateTo("/details", element);
+    }
+    });
+
     return nodoCards;
   };
+
