@@ -14,15 +14,16 @@ const routes = {
   '/details': details,
   '/panel': panel,
 };
+// itera sobre el dataset y se le da clave dinamica al objeto routes
 
 // Assign the routes
 const viewContainer = document.getElementById('root');
 setRoutes(routes);
 setRootElement(viewContainer);
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  console.log('DOM Fully Loaded and Parsed');
-  console.log(event.target.location.pathname);
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  console.log("DOM Fully Loaded and Parsed");
   onURLChange(event.target.location.pathname);
 });
 

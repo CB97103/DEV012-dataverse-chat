@@ -1,13 +1,10 @@
 export const navBar = () => {
-  const htmlNav = `<nav>
-    <i class="fa-solid fa-house"></i>
+    const htmlNav = `<nav>
     <input
-      id="inputFilter"
-      name="searchButton"
       type="search"
-      img.src = "./media/iconolupa.png";
-      placeholder="Buscar película..."
-    />
+      id="inputFilter"
+      placeholder="Search"
+      <img id="input-Icon" src="./media/iconoLupa.png">
     <label for="genre"></label>
     <select id="genre" data-testid="select-filter" name="genre">
       <option disabled selected value="">Genero</option>

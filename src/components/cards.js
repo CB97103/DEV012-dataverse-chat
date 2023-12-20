@@ -1,9 +1,10 @@
-export const renderData = (data) => {
-  //el ciclo es independiente del html
-  let htmlCards = "";
-  const nodoCards = document.createElement("ul"); // Crea el Nodo
-  nodoCards.setAttribute("id", "allCards"); // crea un nodo nuevo con atributo - id
-  data.forEach((items) => {
+import { navigateTo } from "../router.js";
+
+export const renderData = (data) => { //el ciclo es independiente del html 
+    let htmlCards = "";
+    const nodoCards = document.createElement("ul"); // Crea el Nodo 
+    nodoCards.setAttribute('id','allCards') // crea un nodo nuevo con atributo - id 
+    data.forEach((items) => {
     htmlCards += `<li itemscope itemtype="PeliculasAnimacionJaponesa" class="itemContainer" data-id="${items.id}">
                   <dl itemscope itemtype="PeliculasAnimacionJaponesa">
                   <img src="${items.imageUrl}" alt="${items.name}"/>
@@ -16,8 +17,20 @@ export const renderData = (data) => {
                   </div>
                 </dl>
               </li>`; //template string
-  });
-  nodoCards.innerHTML = htmlCards; // Convierte el string en un HTML
-  nodoCards.classList.add("cardsContainer");
-  return nodoCards;
-};
+    });
+    nodoCards.innerHTML = htmlCards;// Convierte el string en un HTML
+    nodoCards.classList.add("cardsContainer");
+    
+    const savedApi = localStorage.getItem("apiKey");
+    nodoCards.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (savedApi === null) {
+    navigateTo("/password");
+    }else {
+    navigateTo("/details", element);
+    }
+    });
+
+    return nodoCards;
+  };
+

@@ -58,18 +58,19 @@ export const home = () => {
     year.value = '';
   });
 
-  // Genre filter
-  const genre = section.querySelector('#genre');
-  const allCards = section.querySelector('#allCards');
-  genre.addEventListener('change', (e) => {
-    const genreSelected = e.target.value;
-    cumulativeFilter = filterByGenre(data, 'genre', genreSelected);
-    allCards.innerHTML = '';
-    allCards.appendChild(renderData(cumulativeFilter));
-    computeStatsContainer.textContent = `Resultados encontrados: ${computeStats(cumulativeFilter)}`;
-    studio.value = '';
-    year.value = '';
-  });
+//Genre filter
+const genre = section.querySelector("#genre");
+const allCards = section.querySelector("#allCards");
+genre.addEventListener("change", (e) => {
+  const genreSelected = e.target.value;
+  cumulativeFilter = filterByGenre(data, "genre", genreSelected);
+  allCards.innerHTML=''
+  allCards.appendChild(renderData(cumulativeFilter));
+  computeStatsContainer.textContent  = "Total de películas: " + computeStats(cumulativeFilter);
+  studio.value = "";
+  year.value = "";
+  console.log(genre);
+});
 
   // Studio filter
   const studio = section.querySelector('#studio');
@@ -131,12 +132,12 @@ export const home = () => {
   totalMetricsElement.textContent = totalMetrics(data);
   metricsContainer.appendChild(totalMetricsElement);
 
-  const chatButton = section.querySelector('#chat');
-  const apiKeyButton = section.querySelector('#apiKey');
-  const movieCard = section.querySelector('.itemContainer');
-  chatButton.addEventListener('click', () => navigateTo('/panel'));
-  apiKeyButton.addEventListener('click', () => navigateTo('/password'));
-  movieCard.addEventListener('click', () => navigateTo('/details'));
+
+
+const chatButton = section.querySelector("#chat");
+const apiKeyButton = section.querySelector("#apiKey");
+chatButton.addEventListener("click", () => navigateTo("/panel"));
+apiKeyButton.addEventListener("click", () => navigateTo("/password"));
 
   return section;
 };
