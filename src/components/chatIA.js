@@ -1,8 +1,14 @@
 export const chatIA = () => {
   const htmlChatIA = `<div class="chatContainer">
     <div class="chatBox"> 
-    <div class="chatUser"> Hola  </div>
-    <div class="chatIA"> Hola  </div>
+    <section class="user">
+    <img src="../media/logokaonashi.png" alt="Kaonashi">
+    <h4> Kaonashi Movies</h4> 
+    </section>
+    <section class="chats">
+    <p class="chatUser">Hola</p>
+    <p class="chatIA">Hola</p>
+    </section>
     <section class="inputChat">
      <input type="text" placeholder="Ingrese su mensaje"/>
      <button class="sendButton">
