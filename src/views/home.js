@@ -139,5 +139,6 @@ const apiKeyButton = section.querySelector("#apiKey");
 chatButton.addEventListener("click", () => navigateTo("/panel"));
 apiKeyButton.addEventListener("click", () => navigateTo("/password"));
 
+
   return section;
 };

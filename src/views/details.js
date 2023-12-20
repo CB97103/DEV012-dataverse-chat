@@ -16,6 +16,7 @@ const createDetailsMessage = () => {
   return nodoDetailsElement;
 };
 
+
 export const details = () => {
   const section = document.createElement("section");
   section.appendChild(header());
@@ -53,3 +54,7 @@ export const details = () => {
 
   return section;
 };
+
+console.log(getOpenIAapi());
+
+
