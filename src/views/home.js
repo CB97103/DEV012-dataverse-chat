@@ -6,7 +6,6 @@ import {
   filterByStudio,
   filterByYear,
   sortData,
-  totalMetrics,
   computeStats,
 } from '../lib/dataFunctions.js';
 import { header } from '../components/header.js';
@@ -125,14 +124,6 @@ genre.addEventListener("change", (e) => {
 
   // Estadística: Dinámicamente modifica el contenido HTML de un elemento computeStatsContainer para mostrar el número total de películas calculado por la función computeStats
   computeStatsContainer.textContent = `Resultados encontrados: ${computeStats(cumulativeFilter)}`;
-
-  // Estadística: Estudio con mayor cantidad de películas y el género que sobresale notablemente
-  const metricsContainer = section.querySelector('.metrics');
-  const totalMetricsElement = document.createElement('p');
-  totalMetricsElement.textContent = totalMetrics(data);
-  metricsContainer.appendChild(totalMetricsElement);
-
-
 
 const chatButton = section.querySelector("#chat");
 const apiKeyButton = section.querySelector("#apiKey");
