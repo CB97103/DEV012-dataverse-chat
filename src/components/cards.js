@@ -24,7 +24,6 @@ export const renderData = (data) => { //el ciclo es independiente del html
     const savedApi = localStorage.getItem("apiKey");
     nodoCards.addEventListener("click", (e) => {
     e.preventDefault();
-    
     if (savedApi === null) {
     navigateTo("/apiKeyPage");
     }else {

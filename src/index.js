@@ -2,9 +2,10 @@
 import {setRoutes, setRootElement, onURLChange} from './router.js';
 import {home} from './views/home.js';
 import {errorPage} from './views/errorPage.js';
-import {apiKeyPage} from './views/apiKeyPage.js';
+import { apiKeyPage } from './views/apikeypage.js';
 import {details} from './views/details.js';
 import {panel} from './views/panel.js';
+import dataset from './data/dataset.js';
 
 
 // Define the routes and their associated views
@@ -15,6 +16,7 @@ const routes = {
   '/details': details,
   '/panel': panel,
 };
+// itera sobre el dataset y se le da clave dinamica al objeto routes
 
 // Assign the routes
 const viewContainer = document.getElementById('root');
@@ -24,7 +26,6 @@ setRootElement(viewContainer);
 
 document.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM Fully Loaded and Parsed");
-  console.log(event.target.location.pathname);
   onURLChange(event.target.location.pathname);
 });
 

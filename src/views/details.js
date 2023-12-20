@@ -16,7 +16,7 @@ export const details = () => {
   return section;
 };
 
-export const createDetailsMessage = () => {
+export const renderMovies = () => {
   const detailsMessageHTML = `<h3>Conoce más acerca de esta película y sumérgete en detalles 
   fascinantes a través de nuestro amigable chat.</h3>`; //template string
   const nodoDetailsElement = document.createElement("h3"); //Nodo
