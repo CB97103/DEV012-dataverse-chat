@@ -52,9 +52,9 @@ const genre = section.querySelector("#genre");
 const allCards = section.querySelector("#allCards");
 genre.addEventListener("change", (e) => {
   const genreSelected = e.target.value;
-  let dataFiltered = filterByGenre(data, "genre", genreSelected);
+  cumulativeFilter = filterByGenre(data, "genre", genreSelected);
   allCards.innerHTML=''
-  allCards.appendChild(renderData(dataFiltered));
+  allCards.appendChild(renderData(cumulativeFilter));
   computeStatsContainer.textContent  = "Total de películas: " + computeStats(cumulativeFilter);
   studio.value = "";
   year.value = "";
