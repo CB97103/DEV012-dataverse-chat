@@ -1,7 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-// crea arrow function para creación
-// import data from "../data/dataset.js";
-
 // Esta función recibe los parametros necesarios para que podamos completar la petición al servidor
 export const chatCompletions = (apiKey, data) =>{
   return fetch("https://api.openai.com/v1/chat/completions", {
