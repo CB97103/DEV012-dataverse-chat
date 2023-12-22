@@ -4,29 +4,37 @@ import { chatIA } from "../components/chatIA.js";
 import { footer } from "../components/footer.js";
 import { chatCompletions } from "../lib/openAiKey.js";
 import { navigateTo } from "../router.js";
-import dataset from "../data/dataset.js";
-
-const createDetailsMessage = () => {
-  const detailsMessageHTML = `<h3>Conoce más acerca de esta película y sumérgete en detalles 
-  fascinantes a través de nuestro amigable chat.</h3>`; // template string
-  const nodoDetailsElement = document.createElement("h3"); // Nodo
-  nodoDetailsElement.innerHTML = detailsMessageHTML;
-  nodoDetailsElement.classList.add("detailsHeading");
-
-  return nodoDetailsElement;
-};
+import { getElementById } from "../lib/apiData.js";
 
 export const details = () => {
   const section = document.createElement("section");
+  
   section.appendChild(header());
   section.appendChild(secondaryNav());
+  
+  const containerMovie = document.createElement("section");
+  const movieIdent = sessionStorage.getItem(`cardsMovie`);
+  const movieIdentApiData = getElementById(movieIdent);
+  const movieView = `<h2>Nombre ${movieIdentApiData.name}</h2>
+   <img src="${movieIdentApiData.imageUrl}" alt="${movieIdentApiData.name}"/>
+    <p>${movieIdentApiData.facts.studio}</p>
+    <p>${movieIdentApiData.description}</p>
+    <p>${movieIdentApiData.facts.genre}</p>
+    <p>${movieIdentApiData.facts.year}</p>`;
+  containerMovie.innerHTML = movieView; 
+
+  section.appendChild(containerMovie); 
+
+ 
   section.appendChild(chatIA());
-  section.appendChild(createDetailsMessage());
   section.appendChild(footer());
 
   const homeButton = section.querySelector(".secondaryNav");
   homeButton.addEventListener("click", () => navigateTo("/"));
 
+
+  /*
+  // API KEY
   chatCompletions(localStorage.getItem("apiKey"), {
     model: "gpt-3.5-turbo",
     messages: [
@@ -50,6 +58,8 @@ export const details = () => {
     .catch((error) => {
       alert("Hubo un error al comunicarse con la API.");
     });
+*/
+
 
   return section;
 };

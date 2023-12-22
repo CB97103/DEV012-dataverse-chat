@@ -2,8 +2,6 @@ import { header } from "../components/header.js";
 import { navigateTo } from "../router.js";
 import { footer } from "../components/footer.js";
 import { homeBtn } from "../components/homeButton.js";
-import { getOpenIAapi } from "../lib/openAIKey.js";
-
 
 export const apiKeyPage = () => {
   const section = document.createElement("section");
@@ -23,7 +21,7 @@ export const apiKeyView = () => {
   <p class="apiText">¡Para interactuar con las péliculas, es necesario que ingreses tu APIKEY!</p>
   <input id="apiKeyInput"
   type="text"
-  placeholder="INGRESA TU API KEY..."/>
+  placeholder="Ingresa tu API Key..."/>
   <button id="clearApiButton">Limpiar</button>
   <button id="saveApiButton">Guardar</button>`; //template string
   const nodoApiView = document.createElement("body"); //Nodo
