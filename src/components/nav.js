@@ -1,10 +1,23 @@
 export const navBar = () => {
-    const htmlNav = `<nav>
+    const htmlNav = ` <nav class="menuHome">
+    <button id="chat" data-testid="panel-chat">Chat grupal</button>
+ <button id="apiKey" data-testid="api-key">Api Key</button>
+ <div class=inputGroup>
     <input
       type="search"
       id="inputFilter"
-      placeholder="Search movie..."
-      <img id="input-Icon" src="./media/iconoLupa.png">
+      placeholder="Search movie..."/>
+      <img id="magnifyingGlassIcon" src="./media/iconoLupa.png">
+      </div>
+</nav>
+    <label for="btnMenu">
+    <img src="../media/iconoMenu.png" class="menuIcon"/>
+    </label>
+    <input type="checkbox" id="btnMenu">
+    <div class="firstContainer">
+    <div class="secondContainer">
+   <nav> 
+   
     <label for="genre"></label>
     <select id="genre" data-testid="select-filter" name="genre">
       <option disabled selected value="">Genero</option>
@@ -62,10 +75,15 @@ export const navBar = () => {
       <option value="desc">Descendente</option>
     </select>
     <button id="button" data-testid="button-clear">Limpiar</button>
-    <button id="chat" data-testid="panel-chat">Chat</button>
-    <button id="apiKey" data-testid="api-key">Api Key</button>
-  </nav> 
-  <p id="noResultsFound"></p>`; //Creates a template string
+   
+    </nav> 
+    <label for="btnMenu">
+    <img src="../media/cerrar.png" id="closeMenu"/>
+    </label>
+    </div>
+    </div>
+ `; //Creates a template string
+
   const nodoNavB = document.createElement("nav"); // Creates a Nodo
   nodoNavB.innerHTML = htmlNav;
   nodoNavB.classList.add("navComponent");

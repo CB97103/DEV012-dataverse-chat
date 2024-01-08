@@ -27,7 +27,7 @@ export const password = () => {
   section.appendChild(footer());
 
   const homeButton = section.querySelector('.secondaryNav');
-  homeButton.addEventListener('click', () => navigateTo('/'));
+  homeButton.addEventListener('click', () => navigateTo("/"));
 
   return section;
 };

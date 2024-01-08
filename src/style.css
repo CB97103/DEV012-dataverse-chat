@@ -1,74 +1,145 @@
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
 * {
-  text-align: center;
   margin: 0px;
   padding: 0px;
 }
 html,
 body {
   height: 100vh;
-  position: relative;
-  overflow-y: scroll;
+
 }
 header {
   height: 210px;
   font-family: "Bleak Chop";
-  background-color: #fafafa;
+  background-color: #ffffff;
   padding-bottom: 70px;
-}
-h1 {
-  font-size: 40px;
-  color: #ec004a;
-  font-family: "Bleak Chop";
-  margin-top: 0px;
-  letter-spacing: 2px;
-}
-h2 {
-  padding: 170px 5px 0px 0px;
-  text-align: center;
-  font-family: "Bleak Chop";
-  letter-spacing: 1px;
-}
-h3 {
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #logo {
   max-height: 180px;
   max-width: 180px;
   margin-top: 25px;
-  align-content: center;
+}
+h1 {
+  font-size: 40px;
+  color: #ec004a;
+  font-family: "Bleak Chop";
+  text-align: center;
+  margin-top: 0px;
+  letter-spacing: 2px;
 }
 
 /* NAV COMPONENT */
 
-nav {
-  height: auto;
-  width: 100%;
-  background-color: #fafafa;
-  padding: 10px 0px 10px 0px;
-}
-/* falta un float*/
 .menuIcon {
-  width: 30px;
-  height: 30px;
-  float: right;
-  margin: 15px 20px 15px 0px;
+  float: left;
+  height: 40px;
+  width: 40px;
+  margin-left: 60px;
+  cursor: pointer;
+}
+
+.menuIcon::-webkit-scrollbar {
+  width: 0;
+}
+#btnMenu {
   display: none;
 }
-#check {
-  display: none;
+.inputGroup{
+  position:relative;
 }
 #inputFilter {
+  width: 240px;
+  height: 40px;
   font-size: 18px;
   text-align: left;
-  padding: 8px 10px 6px 20px;
-  margin: 0px 6px 0px 10px;
-  box-shadow: 3px 3px 3px rgba(132, 132, 132, 0.13);
+  padding: 8px 10px 6px 38px;
+  margin: 10px 6px 10px 20px;
+  box-shadow: 3px 3px 3px 3px rgba(132, 132, 132, 0.13);
   border: 0;
-  border-radius: 8px;
+  border-radius: 20px;
   outline: none;
 }
+#magnifyingGlassIcon{
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 18px;
+  left: 30px;
+  cursor: pointer;
+}
+
+#chat, #apiKey{
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  color: #ec004a;
+  background-color: white;
+  padding: 8px 15px 8px 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
+  border-radius: 5px;
+  margin: 10px 0px 10px 40px;
+  cursor: pointer;
+}
+
+#chat:hover, #apiKey:hover {
+  color: white;
+  background-color: #ec004a;
+}
+/* NAV COMPONENT LATERAL*/
+.firstContainer {
+  position: absolute;
+  background-color: #fbebee;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+#btnMenu:checked ~ .firstContainer {
+  opacity: 1;
+  visibility: visible;
+}
+.secondContainer {
+  width: 100%;
+  max-width: 280px;
+  height: 100vh;
+  background-color: #ffffff;
+  position: relative;
+  transition: all 500ms ease;
+  transform: translateX(-100%);
+}
+
+#btnMenu:checked ~ .firstContainer .secondContainer {
+  transform: translateX(0%);
+}
+.secondContainer nav {
+  transform: translateY(15%);
+}
+.secondContainer nav select, button {
+  display: block;
+  padding: 20px;
+  border-left: 5px solid transparent;
+  transition: all 400ms ease;
+}
+.secondContainer nav select:hover {
+  border-left: 5px solid #ec004a;
+  transition: all 400ms ease;
+}
+#closeMenu {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+
+
 label {
   padding: 5px;
   border: none;
@@ -78,9 +149,8 @@ select {
   color: black;
   font-size: 18px;
   font-family: "Hammersmith One", sans-serif;
-  background-color: #f3f3f3;
-  padding: 6px 10px 6px 10px;
-  box-shadow: 2px rgba(132, 132, 132, 0.13);
+  background-color: #ffffff;
+
   border: 0;
   border-radius: 5px;
   outline: none;
@@ -88,66 +158,72 @@ select {
 select[name="year"] {
   padding: 8px 12px 8px 12px;
 }
-select:hover {
-  color: #ec004a; /*ec004a ece9e2*/
-  transition: 5ms;
-}
 button {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: bold;
   border: none;
   color: #ec004a;
   background-color: #ffffff;
   padding: 8px 15px 8px 15px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
   border-radius: 5px;
-  margin-left: 20px;
+  margin: 40px 0px 40px 80px;
+  cursor: pointer;
 }
 button:hover {
   color: white;
   background-color: #ec004a;
 }
-/* HOME COMPONENT */
 
-.secondaryNav{
-  color: #ec004a;
+.menuHome {
+  background-color: #ec004a;
+  display: flex;
+  justify-content: right;
+  padding-right: 150px;
+}
+
+/* SECONDARY NAV COMPONENT */
+
+.secondaryNav {
   height: auto;
   width: 100%;
-  background-color: #fafafa;
+  background-color: #ec004a;
   padding: 10px 0px 10px 0px;
 }
 .imgHome {
-  width: 64px;
-  height: 64px;
+  width: 45px;
+  height: 45px;
   display: flex;
-  margin-left: 15px;
+  margin-left: 100px;
   padding: 0px 0px 8px 30px;
+}
+
+/*HOME CHAT MESSAGES*/
+
+.chatMss {
+  font-size: 19px;
+  color: white;
+  font-family: "Hammersmith One", sans-serif;
+  padding: 10px;
+  background-color: #ec004a;
+  display: flex;
+  justify-content: center;
 }
 
 /* COMPUTE STATS */
 
-p {
-  width: 100%;
-  font-size: 17px;
-  color: rgb(158, 45, 45);
-  font-family: "Hammersmith One", sans-serif;
-  padding: 7px 0px;
-}
-.metrics {
-  height: auto;
-  font-size: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #ec004a;
-  padding-bottom: 0px;
-}
 .computeStats {
-  font-size: 15px;
+  font-size: 19px;
   color: rgb(0, 0, 0);
   text-align: left;
-  margin-left: 225px;
+  margin: 50px 0px 0px 210px;
 }
 #noResultsFound {
-  padding-top: 20px opx;
+  font-size: 25px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* CARDS COMPONENT */
@@ -156,13 +232,11 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 30px;
+  margin: 10px 0px 40px;
 }
 .itemContainer {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  word-wrap: break-word;
   width: 500px;
   height: 280px;
   margin: 20px;
@@ -172,10 +246,11 @@ ul {
   background: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: relative;
+  cursor: pointer;
 }
-.itemContainer:hover{
-  transform: translateY(-15px);
-  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
+.itemContainer:hover {
+  /*  transform: translateY(-15px);*/
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 img {
   max-width: 220px;
@@ -193,8 +268,9 @@ img {
   align-items: flex-start;
 }
 dd[itemprop="studio"] {
-  color: #fee44e;
-  font-size: 13px;
+  color: #fad400;
+  font-size: 15px;
+  font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
   margin-top: 25px;
@@ -231,6 +307,7 @@ dd[itemprop="year"] {
   left: 240px;
   letter-spacing: 1px;
 }
+
 /* CHAT IA COMPONENT*/
 
 .chatContainer {
@@ -245,27 +322,27 @@ dd[itemprop="year"] {
   background-color: #fcfcfc;
   overflow: hidden;
   border-radius: 10px;
-  margin: 40px 40px 40px 60px;
+  margin: 0px 40px 40px 60px;
   position: relative;
 }
-.user{
+.user {
   display: flex;
   justify-content: start;
   align-items: center;
   height: 60px;
-  background-color:#ec004a;
+  background-color: #ec004a;
   padding: 15px;
 }
-.user img{
+.user img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
 }
-.user h4{
+.user h4 {
   color: white;
-  padding: 15px;
+  padding: 18px;
 }
-.chats{
+.chats {
   width: 100%;
   padding: 0 15px;
   color: white;
@@ -290,28 +367,27 @@ dd[itemprop="year"] {
   border-radius: 10px;
   margin: 5px 40px 5px auto;
 }
-.chatInputForm{
-  display: flex;
-  align-items: center;
+.chatInputForm {
   width: 95%;
   height: 50px;
+  display: flex;
+  align-items: center;
   padding: 15px;
   overflow: hidden;
   position: absolute;
-  bottom: 0; /*0*/
+  bottom: 0;
 }
 .chatInputForm input {
   width: 85%;
-  height: 100%;  
+  height: 100%;
   font-size: 20px;
   text-align: start;
   color: rgb(255, 255, 255);
   background-color: #ec004a;
   border: none;
-  outline: none; 
+  outline: none;
   border-radius: 30px;
   padding: 0 20px;
-  
 }
 .sendButton {
   width: 40px;
@@ -326,97 +402,41 @@ dd[itemprop="year"] {
   border-radius: 19px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
-.sendButton:active{
+.sendButton:active {
   transform: scale(0.85);
 }
 .sendButton img {
   width: 100%;
   height: 100%;
 }
-.apiText{
-  color:#010101;
-  font-family: "Bleak Chop";
-  font-size: 30px;
+
+/* API COMPONENT */
+
+.apiSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;      /*falta centrar los elementos*/
 }
-#apiKeyInput{
+.apiSection h2 {
+  font-size: 40px;
+  margin-top: 40px;
+}
+.apiText {
+  color: #010101;
+  font-size: 30px;
+  font-family: "Bleak Chop";
+}
+#apiKeyInput {
   font-size: 18px;
   text-align: left;
   padding: 15px 400px 15px 15px;
   margin: 0px 6px 0px 10px;
   box-shadow: 5px 5px 5px rgba(132, 132, 132, 0.3);
-  border: 0;
   box-sizing: border-box;
   border-radius: 8px;
   outline: none;
 }
-#saveApiButton{
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  background-color: #ec004a;
-  
-/* FOOTER COMPONENT */
 
-  padding: 15px 15px 15px 15px;
-  border-radius: 5px;
-  box-shadow:5px 5px 10px rgba(0, 0, 0, 0.3);
-  width: 20%;
-  margin-left: -50px; 
-}
-#clearApiButton{
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  color: #ece9e2;
-  background-color: #ec004a;
-}
-#saveApiButton:hover {
-  background-color: rgba(31, 30, 30, 0.902);
-}
-#clearApiButton:hover {
-  background-color: rgba(31, 30, 30, 0.902);
-}
-.imgHome{
-  width: 40px;
-  height: 40px;
-  display: flex;
-  padding: 0px 0px 8px 30px;
-}
-footer {
-  color: white;
-  font-size: 20px;
-  /*position: static;*/
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-top: 30px;
-  padding: 20px 20px;
-  background-color: #ec004a;
-  font-family: "Hammersmith One", sans-serif;
-}
-
-/*API VIEW */
-
-.apiBody h2 {
-  margin: 20px 0px 80px 0px;
-}
-.apiText {
-  color: #010101;
-  font-family: "Bleak Chop";
-  font-size: 30px;
-}
-.apiText {
-  color: #010101;
-  margin: 20px 0px 40px 0px;
-}
-.apiKeyInput {
-  font-size: 18px;
-  color: rgb(0, 0, 0);
-  background-color: rgb(236, 236, 236);
-  width: 400px;
-  padding: 20px;
-  margin: 60px 40px;
-}
 #saveApiButton,
 #clearApiButton {
   width: 100px;
@@ -436,12 +456,102 @@ footer {
 #clearApiButton:hover {
   background-color: rgba(31, 30, 30, 0.902);
 }
+/* FOOTER COMPONENT */
+
+footer {
+  color: white;
+  font-size: 20px;
+  margin-top: auto;
+  padding: 20px 20px;
+  background-color: #ec004a;
+  font-family: "Hammersmith One", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*API VIEW */
+
+.apiSection h2 {
+  margin: 20px 0px 80px 0px;
+}
+.apiText {
+  color: #010101;
+  font-family: "Bleak Chop";
+  font-size: 30px;
+}
+.apiText {
+  color: #010101;
+  margin: 20px 0px 40px 0px;
+}
+.apiKeyInput {
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(236, 236, 236);
+  width: 400px;
+  padding: 20px;
+  margin: 60px 40px;
+}
+
 
 /* DETAILS VIEW */
 
-.containerChatSingleMovie {
+.detailsMovie {
+  height: 400px;
+  width: 330px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+ justify-content: left;
+  background-color: #f6f4f4db;
+  margin: 10px 0px 0px 205px;
+  border-radius: 20px;
+  padding: 30px 30px 30px 30px;
+  line-height: 40px;
+}
+.detailsMovie h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+.detailsMovie h3 {
+  color: #ec004a;
+}
+.detailsMovie p {
+  color: #010101;
+  font-size: 24px;
+
+
+}
+.detailsImage {
+  max-width: 400px;
+  max-height: 579px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.description {
+  /*background-color: #ece9e2;*/
+  margin: 60px;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.descriptionContainer {
+  text-align: left;
+  margin-left: 200px;
+  padding: 80px 80px 0px 80px;
+  background-color: #f6f4f4db;
+  border-radius: 10px;
+}
+.descriptionContainer h3 {
+  color: #ec004a;
+  text-align: left;
+  margin-bottom: 50px;
+}
+.descriptionContainer p {
+font-size: 28px;
+line-height: 40px;
 }
 
 /* ERROR VIEW */

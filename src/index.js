@@ -28,3 +28,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 window.onpopstate = onURLChange;
+

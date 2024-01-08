@@ -17,7 +17,8 @@ import { navigateTo } from '../router.js';
 
 const createChatMessage = () => {
   const section = `<p class="chatMss">!Kaonashi Movies, te permite interactuar con las pelis al hacer click en ellas!</p>
-  <p class="computeStats"></p>`; // Creates a template string
+  <p class="computeStats"></p>
+  <p id="noResultsFound"></p>`; // Creates a template string
   const nodoP = document.createElement('section'); // Creates a Nodo
   nodoP.innerHTML = section;
   nodoP.classList.add('sectionComputeStats');
@@ -113,7 +114,6 @@ genre.addEventListener("change", (e) => {
     const searchInputField = section.querySelector('[name="searchButton"]');
     filterSelectors.forEach((selector) => {
       selector.value = selector.options[0].value;
-      searchInputField.value = '';
       noResultsFoundContainer.innerHTML = '';
       cumulativeFilter = data;
       allCards.innerHTML = '';
@@ -127,8 +127,8 @@ genre.addEventListener("change", (e) => {
 
 const chatButton = section.querySelector("#chat");
 const apiKeyButton = section.querySelector("#apiKey");
-chatButton.addEventListener("click", () => navigateTo("/panel"));
-apiKeyButton.addEventListener("click", () => navigateTo("/password"));
+chatButton.addEventListener("click", () => navigateTo("/panel", "properties"));
+apiKeyButton.addEventListener("click", () => navigateTo("/password", "properties"));
 
 
   return section;

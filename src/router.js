@@ -41,7 +41,7 @@ if (ROUTES[pathname]){
   //Crea transiciones de página sin realizar solicitudes al servidor para cargar nuevas páginas completas.
   export const navigateTo = (pathname, properties = {}) => {
     // update window history with pushState
-    const URLvisited = window.location.origin + pathname; // our Hostname would be localhost:3000
+    const URLvisited = `${window.location.origin}${pathname}` // our Hostname would be localhost:3000
     history.pushState({}, "", URLvisited); 
     // render the view with the pathname and props
     renderView(pathname, properties);
