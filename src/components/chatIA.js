@@ -2,15 +2,13 @@ export const chatIA = () => {
   const htmlChatIA = `<div class="chatContainer">
     <div class="chatBox"> 
     <section class="user">
-    <img src="../media/logokaonashi.png" alt="Kaonashi">
-    <h4> Kaonashi Movies</h4> 
     </section>
     <section class="chats">
     <section class="messagesUser">
-    <p class="chatUser">Hola</p>
+    <p ></p>
     </section>
     <section class="messagesIA">
-    <p class="chatIA"></p>
+    <p class=""></p>
     </section>
     </section>
     <form class="chatInputForm">
@@ -21,17 +19,11 @@ export const chatIA = () => {
    </form>
    </div>
       </div>`; //template string
+      
   const nodoChatIA = document.createElement("section"); //Nodo
   nodoChatIA.innerHTML = htmlChatIA;
   nodoChatIA.classList.add("chatIA");
 
-  const chatMessages = (message) =>`<section class="chats">
-  <section class="messagesUser">
-  <p class="chatUser">Hola</p>
-  </section>
-  <section class="messagesIA">
-  <p class="chatIA">Hola</p>
-  </section>`
 
   return nodoChatIA;
 };

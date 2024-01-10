@@ -312,18 +312,18 @@ dd[itemprop="year"] {
 
 .chatContainer {
   display: flex;
-  justify-content: flex-end;
+  justify-content:right;
   align-items: center;
-  margin-right: 70px;
 }
 .chatBox {
-  width: 900px;
-  height: 800px;
+  width: 915px;
+  height: 650px;
   background-color: #fcfcfc;
   overflow: hidden;
   border-radius: 10px;
   margin: 0px 40px 40px 60px;
   position: relative;
+  transform: translate(-7px, -339px);
 }
 .user {
   display: flex;
@@ -347,28 +347,30 @@ dd[itemprop="year"] {
   padding: 0 15px;
   color: white;
   position: relative;
-  font-size: 12px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
-.chatUser {
-  color: black;
-  width: 50%;
-  word-wrap: break-word;
-  background-color: #f10d55;
-  padding: 10px 10px;
-  border-radius: 10px;
-  margin: 25px 5px;
-}
-.chatIA {
+.userMessages {
   color: black;
   width: 50%;
   word-wrap: break-word;
   background-color: #ececec;
-  padding: 10px 10px;
+  padding: 10px 15px 10px 15px;
+  border-radius: 10px;
+  margin: 25px 5px;
+}
+.AIsResponse {
+  color: white;
+  width: 50%;
+  word-wrap: break-word;
+  background-color: #ec004a;
+  padding: 10px 15px 10px 15px;
   border-radius: 10px;
   margin: 5px 40px 5px auto;
 }
 .chatInputForm {
-  width: 95%;
+  width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
@@ -382,13 +384,14 @@ dd[itemprop="year"] {
   height: 100%;
   font-size: 20px;
   text-align: start;
-  color: rgb(255, 255, 255);
-  background-color: #ec004a;
+  color: rgb(0, 0, 0);
+  background-color: #ececec;
   border: none;
   outline: none;
   border-radius: 30px;
   padding: 0 20px;
 }
+
 .sendButton {
   width: 40px;
   height: 40px;
@@ -497,61 +500,59 @@ footer {
 /* DETAILS VIEW */
 
 .detailsMovie {
-  height: 400px;
-  width: 330px;
+  height: 281px;
+  width: 212px;
   display: flex;
   flex-direction: column;
  justify-content: left;
   background-color: #f6f4f4db;
-  margin: 10px 0px 0px 205px;
+  margin: 10px 0px 0px 150px;
   border-radius: 20px;
   padding: 30px 30px 30px 30px;
-  line-height: 40px;
+  line-height: 25px;
 }
 .detailsMovie h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
-}
-.detailsMovie h3 {
   color: #ec004a;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+.detailsMovie h6 {
+  color: #000000;
 }
 .detailsMovie p {
-  color: #010101;
-  font-size: 24px;
-
-
+  color: #070707;
+  font-size: 17px;
 }
 .detailsImage {
-  max-width: 400px;
-  max-height: 579px;
+  max-width: 450px;
+  max-height: 400px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   margin-left: 100px;
 }
-
 .description {
   /*background-color: #ece9e2;*/
-  margin: 60px;
-  padding: 50px;
+  margin: 50px;
   display: flex;
   flex-direction: row;
 }
 .descriptionContainer {
   text-align: left;
-  margin-left: 200px;
-  padding: 80px 80px 0px 80px;
+  margin-left: 100px;
+  padding: 20px 80px 0px 40px;
   background-color: #f6f4f4db;
   border-radius: 10px;
 }
 .descriptionContainer h3 {
   color: #ec004a;
+  font-size: 19px;
   text-align: left;
-  margin-bottom: 50px;
+  margin:20px 0px 20px 0px;
 }
 .descriptionContainer p {
-font-size: 28px;
-line-height: 40px;
+font-size: 19px;
+line-height: 30px;
 }
 
 /* ERROR VIEW */

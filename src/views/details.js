@@ -24,64 +24,122 @@ export const details = () => {
     </section>
     <section class="detailsMovie"> 
      <h2> ${movieIdentApiData.name}</h2>
-    <h3>Genre</h3><p>${movieIdentApiData.facts.genre}</p>
-    <h3>Studio</h3><p>${movieIdentApiData.facts.studio}</p>
-    <h3>Year</h3>
+    <h6>Genre</h6><p>${movieIdentApiData.facts.genre}</p>
+    <h6>Studio</h6><p>${movieIdentApiData.facts.studio}</p>
+    <h6>Year</h6>
     <p>${movieIdentApiData.facts.year}</p>
     </section >
     `;
   containerMovie.innerHTML = movieView;
 
   section.appendChild(containerMovie);
-
   section.appendChild(chatIA());
   section.appendChild(footer());
 
- 
+  /*
+  const userMessageElement = document.createElement("p");
+      userMessageElement.textContent = prompt.value;
+      userMessageElement.classList.add("userMessages");
 
-  // API KEY
+    userMessageElement.style.color = "black";
+      // Agrega el  mensaje al contenedor del chat
+      chatsSection.appendChild(userMessageElement);
+*/
 
-  const buttonChatOneMovie = section.querySelector(".sendButton");
-  buttonChatOneMovie.addEventListener('click', (event) => {
-    event.preventDefault(); // Evita que vuelva a cargarse la página
+  // SECCIÓN CHAT IA IMAGEN Y NOMBRE
 
-  const apiKey = localStorage.getItem("apiKey");
+  const chatsSectionMovie = section.querySelector(".user");
+  const sectionMovieChat = document.createElement("img");
+  sectionMovieChat.src = movieIdentApiData.imageUrl;
+  console.log(sectionMovieChat);
+  sectionMovieChat.classList.add("imgMovie");
+  chatsSectionMovie.appendChild(sectionMovieChat);
+
+  const sectionMovieChatIA = document.createElement("h4");
+  sectionMovieChatIA.innerHTML = `${movieIdentApiData.name}`;
+  chatsSectionMovie.style.color = "white";
+  console.log(sectionMovieChatIA);
+  sectionMovieChatIA.classList.add("h4");
+  chatsSectionMovie.appendChild(sectionMovieChatIA);
+
+  // MENSAJE USUARIO
+
   const prompt = section.querySelector("#prompt");
-  const button = section.querySelector(".sendButton");
-  const output = section.querySelector(".chatIA");
+  const output = section.querySelector(".AIsResponse");
+  const chatsSection = section.querySelector(".chats");
+  const userChatMessages = section.querySelector(".userMessages");
+  console.log(prompt.value);
 
+  const form = section.querySelector(".chatInputForm");
+  const buttonChatOneMovie = section.querySelector(".sendButton");
 
-  chatCompletions(apiKey, {
-    model: "gpt-3.5-turbo",
-    messages: [
-      {
-        role: "system",
-        content: `Actuando como un personaje de la película ${movieIdentApiData.name} responde las preguntas con sus expresiones y antes de responder presentate`,
-      }, 
-      {
-        role: "user",
-        content: prompt,
-      },
-    ],
-  })
-    .then((responseOpenIA) => {
-      responseOpenIA.json().then((responseJSObject) => {
-        console.log(responseJSObject);
-        console.log(responseJSObject.choices);
-      });
-      return fetch(prompt.value);
-    }).then(response => response.json())
-    .then(data => {
-        output.innerHTML = data.choices[0].message.content;
-        console.log(data);
+  buttonChatOneMovie.addEventListener("click", (event) => {
+    event.preventDefault(); // Evita que la página se recargue y envie el formulario
+
+    // Necesita escuchar el evento
+    if (prompt.value) {
+      // Crea un nuevo elemento para presentar el mensaje del usuario
+      const userMessageElement = document.createElement("p");
+      userMessageElement.textContent = prompt.value;
+      userMessageElement.classList.add("userMessages");
+
+      userMessageElement.style.color = "black";
+      // Agrega el  mensaje al contenedor del chat
+      chatsSection.appendChild(userMessageElement);
+
+      // Limpia el campo de entrada
+      // prompt.value = "";
+    }
+
+    // MENSAJE API
+
+    chatCompletions(localStorage.getItem("apiKey"), {
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content: `Actuando como un personaje principal de la película ${movieIdentApiData.name} responde la primera pregunta diciendo tu nombre y responde las preguntas con sus expresiones`,
+        },
+        {
+          role: "user",
+          content: prompt.value,
+        },
+      ],
     })
-    .catch((error) => {
-      alert("Hubo un error al comunicarse con la API."+ error);
-      // .catch((error) => {
-      // console.error("Hubo un error al comunicarse con la API.", error);
-    });
-})
-const homeButton = section.querySelector(".secondaryNav");
-homeButton.addEventListener("click", () => navigateTo("/", "properties"));
-    return section;
-}
+      .then((responseOpenIA) => {
+        return responseOpenIA.json();
+      })
+      .then((data) => {
+        //crear un nuevo elemenmtno añadirle messageIA clase y añadirlo a chats section
+        console.log(data);
+        console.log(data.choices);
+        const IAsMessageElement = document.createElement("p");
+        IAsMessageElement.textContent = data.choices[0].message.content;
+        IAsMessageElement.classList.add("AIsResponse");
+        chatsSection.appendChild(IAsMessageElement);
+        // output.innerHTML = data.choices[0].message.content;
+      })
+      /*  .then((responseOpenIA) => {
+    return responseOpenIA.json();
+  })
+  .then((data) => {
+    // Manejar la respuesta JSON
+    console.log(data);
+    console.log(data.choices);
+    output.innerHTML = data.choices[0].message.content;
+    */
+      .catch((error) => {
+        console.error("Error en la petición:", error);
+        alert("Hubo un error al comunicarse con la API.");
+      })
+      // Para que se limpie el input cuando la IA responda
+      .finally(() => {
+        prompt.value = "";
+      });
+  });
+
+  const homeButton = section.querySelector(".secondaryNav");
+  homeButton.addEventListener("click", () => navigateTo("/"));
+
+  return section;
+};
