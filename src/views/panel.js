@@ -1,14 +1,14 @@
-import { header } from '../components/header.js';
-import { secondaryNav } from '../components/secondaryNav.js';
-import { footer } from '../components/footer.js';
-import { navigateTo } from '../router.js';
+import { header } from "../components/header.js";
+import { secondaryNav } from "../components/secondaryNav.js";
+import { footer } from "../components/footer.js";
+import { navigateTo } from "../router.js";
 
 const createPanelMessage = () => {
   const panelMessageHTML = `<h3> Interactúa con todas nuestras películas a través 
   del chat y descubre historias cautivadoras y momentos inolvidables.</h3>`; // template string
-  const nodoPanelElement = document.createElement('h3'); // Nodo
+  const nodoPanelElement = document.createElement("h3"); // Nodo
   nodoPanelElement.innerHTML = panelMessageHTML;
-  nodoPanelElement.classList.add('panelHeading');
+  nodoPanelElement.classList.add("panelHeading");
 
   return nodoPanelElement;
 };
@@ -21,7 +21,7 @@ export const panel = () => {
   section.appendChild(footer());
 
   const homeButton = section.querySelector('.secondaryNav');
-  homeButton.addEventListener('click', () => navigateTo("/"));
+  homeButton.addEventListener('click', () => navigateTo('/'));
 
   return section;
 };

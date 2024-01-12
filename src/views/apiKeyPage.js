@@ -1,24 +1,23 @@
-import { header } from "../components/header.js";
-import { navigateTo } from "../router.js";
-import { footer } from "../components/footer.js";
-import { secondaryNav } from "../components/secondaryNav.js";
+import { header } from '../components/header.js';
+import { navigateTo } from '../router.js';
+import { footer } from '../components/footer.js';
+import { secondaryNav } from '../components/secondaryNav.js';
 
 export const apiKeyPage = () => {
-  const section = document.createElement("section");
+  const section = document.createElement('section');
   section.appendChild(header());
   section.appendChild(secondaryNav());
   section.appendChild(apiKeyView());
   section.appendChild(footer());
 
-const homeButton = section.querySelector(".homeButton");
-homeButton.addEventListener("click",() => navigateTo("/"));
+  const homeButton = section.querySelector('.homeButton');
+  homeButton.addEventListener('click', () => navigateTo('/'));
 
-const btnSaveApiKey = section.querySelector('#saveApiButton');
-btnSaveApiKey.addEventListener('click', () => {
-  console.log('me diste click');
-})
+  const btnSaveApiKey = section.querySelector('#saveApiButton');
+  btnSaveApiKey.addEventListener('click', () => {
+  });
 
-return section;
+  return section;
 };
 
 const apiKeyView = () => {
@@ -33,8 +32,5 @@ const apiKeyView = () => {
   nodoApiView.innerHTML = apiViewHTML;
   nodoApiView.classList.add("apiSection");
 
-
-
   return nodoApiView;
 };
-

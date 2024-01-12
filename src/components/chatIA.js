@@ -19,11 +19,10 @@ export const chatIA = () => {
    </form>
    </div>
       </div>`; //template string
-      
-  const nodoChatIA = document.createElement("section"); //Nodo
-  nodoChatIA.innerHTML = htmlChatIA;
-  nodoChatIA.classList.add("chatIA");
 
+  const nodoChatIA = document.createElement('section'); //Nodo
+  nodoChatIA.innerHTML = htmlChatIA;
+  nodoChatIA.classList.add('chatIA');
 
   return nodoChatIA;
 };

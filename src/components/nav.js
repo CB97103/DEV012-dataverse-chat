@@ -1,5 +1,5 @@
 export const navBar = () => {
-    const htmlNav = ` <nav class="menuHome">
+  const htmlNav = ` <nav class="menuHome">
     <button id="chat" data-testid="panel-chat">Chat grupal</button>
  <button id="apiKey" data-testid="api-key">Api Key</button>
  <div class=inputGroup>
@@ -84,8 +84,8 @@ export const navBar = () => {
     </div>
  `; //Creates a template string
 
-  const nodoNavB = document.createElement("nav"); // Creates a Nodo
+  const nodoNavB = document.createElement('nav'); // Creates a Nodo
   nodoNavB.innerHTML = htmlNav;
-  nodoNavB.classList.add("navComponent");
+  nodoNavB.classList.add('navComponent');
   return nodoNavB;
 };

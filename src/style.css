@@ -6,7 +6,6 @@
 html,
 body {
   height: 100vh;
-
 }
 header {
   height: 210px;
@@ -47,8 +46,8 @@ h1 {
 #btnMenu {
   display: none;
 }
-.inputGroup{
-  position:relative;
+.inputGroup {
+  position: relative;
 }
 #inputFilter {
   width: 240px;
@@ -62,7 +61,7 @@ h1 {
   border-radius: 20px;
   outline: none;
 }
-#magnifyingGlassIcon{
+#magnifyingGlassIcon {
   height: 24px;
   width: 24px;
   position: absolute;
@@ -71,7 +70,8 @@ h1 {
   cursor: pointer;
 }
 
-#chat, #apiKey{
+#chat,
+#apiKey {
   font-size: 17px;
   font-weight: bold;
   border: none;
@@ -84,7 +84,8 @@ h1 {
   cursor: pointer;
 }
 
-#chat:hover, #apiKey:hover {
+#chat:hover,
+#apiKey:hover {
   color: white;
   background-color: #ec004a;
 }
@@ -120,7 +121,8 @@ h1 {
 .secondContainer nav {
   transform: translateY(15%);
 }
-.secondContainer nav select, button {
+.secondContainer nav select,
+button {
   display: block;
   padding: 20px;
   border-left: 5px solid transparent;
@@ -138,7 +140,6 @@ h1 {
   top: 15px;
   cursor: pointer;
 }
-
 
 label {
   padding: 5px;
@@ -312,7 +313,7 @@ dd[itemprop="year"] {
 
 .chatContainer {
   display: flex;
-  justify-content:right;
+  justify-content: right;
   align-items: center;
 }
 .chatBox {
@@ -349,7 +350,7 @@ dd[itemprop="year"] {
   position: relative;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth;
+  overflow-y: auto;
 }
 .userMessages {
   color: black;
@@ -385,7 +386,7 @@ dd[itemprop="year"] {
   font-size: 20px;
   text-align: start;
   color: rgb(0, 0, 0);
-  background-color: #ececec;
+  background-color: #f3f3f3;
   border: none;
   outline: none;
   border-radius: 30px;
@@ -418,7 +419,7 @@ dd[itemprop="year"] {
 .apiSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;      /*falta centrar los elementos*/
+  justify-content: center; /*falta centrar los elementos*/
 }
 .apiSection h2 {
   font-size: 40px;
@@ -496,7 +497,6 @@ footer {
   margin: 60px 40px;
 }
 
-
 /* DETAILS VIEW */
 
 .detailsMovie {
@@ -504,8 +504,8 @@ footer {
   width: 212px;
   display: flex;
   flex-direction: column;
- justify-content: left;
-  background-color: #f6f4f4db;
+  justify-content: left;
+  background-color: #fefefe;
   margin: 10px 0px 0px 150px;
   border-radius: 20px;
   padding: 30px 30px 30px 30px;
@@ -541,18 +541,18 @@ footer {
   text-align: left;
   margin-left: 100px;
   padding: 20px 80px 0px 40px;
-  background-color: #f6f4f4db;
+  background-color: #ffffff;
   border-radius: 10px;
 }
 .descriptionContainer h3 {
   color: #ec004a;
   font-size: 19px;
   text-align: left;
-  margin:20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
 }
 .descriptionContainer p {
-font-size: 19px;
-line-height: 30px;
+  font-size: 19px;
+  line-height: 30px;
 }
 
 /* ERROR VIEW */

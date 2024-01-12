@@ -21,11 +21,8 @@ const viewContainer = document.getElementById('root');
 setRoutes(routes);
 setRootElement(viewContainer);
 
-
-document.addEventListener("DOMContentLoaded", (event) => {
-  console.log("DOM Fully Loaded and Parsed");
+document.addEventListener('DOMContentLoaded', (event) => {
   onURLChange(event.target.location.pathname);
 });
 
 window.onpopstate = onURLChange;
-

@@ -1,9 +1,7 @@
-
-
 //La función searchByName genera un nuevo array de películas, filtrando la información según el nombre proporcionado.
 //Esto se logra a través de tres parámetros de entrada(data, searchBy e input).
 export const searchByName = (data, searchBy, input) => {
-  if (searchBy === "input") {
+  if (searchBy === 'input') {
     const filteredDataByName = data.filter((item) => {
       return item.name.toLowerCase().includes(input.toLowerCase());
     });
@@ -66,5 +64,3 @@ export const computeStats = (data) => {
   const numberOfElements = data.reduce((accumulator) => accumulator + 1, 0);
   return numberOfElements;
 };
-
- 

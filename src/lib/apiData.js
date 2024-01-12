@@ -1,5 +1,4 @@
-import dataset from "../data/dataset.js";
-
+import dataset from '../data/dataset.js';
 
 // TRAER EL ID
 export function getElementById(id) {

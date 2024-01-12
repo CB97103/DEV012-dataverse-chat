@@ -5,8 +5,8 @@ import { footer } from '../components/footer.js';
 import { navigateTo } from '../router.js';
 
 const createErrorMessage = () => {
-  const errorMessageHTML = `<h2 class="errorMessage">Page not found</h2>
-  <img class="errorImg" src="./media/errorImg2.png"/> `; // template string
+  const errorMessageHTML = `<h2 class='errorMessage'>Page not found</h2>
+  <img class='errorImg' src='./media/errorImg2.png'/> `; // template string
   const nodoErrorElement = document.createElement('h2'); // crea el nodo
   nodoErrorElement.innerHTML = errorMessageHTML;
   nodoErrorElement.classList.add('errorHeading');
@@ -22,6 +22,6 @@ export const errorPage = () => {
   section.appendChild(footer());
 
   const homeButton = section.querySelector('.secondaryNav');
-  homeButton.addEventListener('click', () => navigateTo("/"));
+  homeButton.addEventListener('click', () => navigateTo('/'));
   return section;
 };
