@@ -1,15 +1,10 @@
 export const chatIA = () => {
   const htmlChatIA = `<div class="chatContainer">
     <div class="chatBox"> 
-    <section class="user">
-    </section>
+    <p class="user"></p>
     <section class="chats">
-    <section class="messagesUser">
-    <p ></p>
-    </section>
-    <section class="messagesIA">
-    <p class=""></p>
-    </section>
+    <p class="messagesUser"></p>
+    <p class="messagesIA"></p>
     </section>
     <form class="chatInputForm">
      <input type="text" placeholder="Ingrese su mensaje" id="prompt"/>

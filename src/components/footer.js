@@ -1,5 +1,5 @@
 export const footer = () => {
-  const htmlFooter = `<p>Developed by Gineth</p>`; //template string
+  const htmlFooter = `<p>Desarrollado por Gineth G</p>`; //template string
   const nodoFooter = document.createElement('footer'); //Nodo
   nodoFooter.innerHTML = htmlFooter;
   nodoFooter.classList.add('footer');

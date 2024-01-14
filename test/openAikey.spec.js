@@ -27,7 +27,7 @@ describe("Validate  open AI endpoint", () => {
         },
         body: JSON.stringify({
           model: "gpt-3.5-turbo",
-          messages,
+          messages
         }),
       },
     );
@@ -49,7 +49,7 @@ describe("Validate  open AI endpoint", () => {
 
     return chatCompletions("918273", [{ role: "user", content: "foo" }]).then(
       (resolved) => {
-        expect(resolved).toBe(response);
+        expect(resolved).toEqual(response);
       },
     );
   });

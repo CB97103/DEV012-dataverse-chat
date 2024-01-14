@@ -32,7 +32,7 @@ describe("Data Filters", () => {
       },
     ];
 
-    const filteredData = filterByGenre(mockData, "genre", "fantasía");
+    const filteredData = filterByGenre(mockData, "genre", "Fantasía");
     expect(filteredData).toEqual(expectedFilteredData);
   }),
 
@@ -75,17 +75,17 @@ describe("Data Filters", () => {
     const mockData = [
       {
         facts: {
-          year: "2016",
+          year: 2016,
         },
       },
       {
         facts: {
-          year: "2019",
+          year: 2019,
         },
       },
       {
         facts: {
-          year: "2022",
+          year: 2022,
         },
       },
     ];
@@ -93,12 +93,12 @@ describe("Data Filters", () => {
     const expectedFilteredData = [
       {
         facts: {
-          year: "2016",
+          year: 2016,
         },
       },
     ];
 
-    const filteredData = filterByYear(mockData, "year", "2016");
-    expect(filteredData).toEqual(expectedFilteredData);
+    const filteredData = filterByYear(mockData, "year", 2016);
+    expect(filteredData).toStrictEqual(expectedFilteredData);
   });
 });

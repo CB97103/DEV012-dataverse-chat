@@ -15,20 +15,20 @@ export const details = () => {
   const containerMovie = document.createElement('section');
   const movieIdent = sessionStorage.getItem(`cardsMovie`);
   const movieIdentApiData = getElementById(movieIdent);
-  const movieView = `<section class="description">
+  const movieView = `<section class="descriptionC">
     <img src="${movieIdentApiData.imageUrl}" class="detailsImage"alt="${movieIdentApiData.name}"/>
-    <div class="descriptionContainer">
+   <section class="description" > 
     <h3>Description</h3>
     <p>${movieIdentApiData.description}</p>
-    </div>
-    </section>
+</section>
     <section class="detailsMovie"> 
-     <h2> ${movieIdentApiData.name}</h2>
+     <h3> ${movieIdentApiData.name}</h3>
     <h6>Genre</h6><p>${movieIdentApiData.facts.genre}</p>
     <h6>Studio</h6><p>${movieIdentApiData.facts.studio}</p>
     <h6>Year</h6>
     <p>${movieIdentApiData.facts.year}</p>
     </section >
+    </section>
     `;
   containerMovie.innerHTML = movieView;
 

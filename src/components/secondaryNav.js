@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export const secondaryNav = () => {
   const sectionHomeButton = document.createElement('section');
   sectionHomeButton.classList.add('nav');

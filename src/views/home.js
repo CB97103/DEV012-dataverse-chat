@@ -14,8 +14,7 @@ import data from "../data/dataset.js";
 import { navigateTo } from "../router.js";
 
 const createChatMessage = () => {
-  const section = `
-  <p class="computeStats"></p>
+  const section = `<p class="computeStats"></p>
   <p id="noResultsFound"></p>`; // Creates a template string
   const nodoP = document.createElement("section"); // Creates a Nodo
   nodoP.innerHTML = section;
@@ -133,13 +132,10 @@ export const home = () => {
     cumulativeFilter
   )}`;
 
-  const chatButton = section.querySelector("#chat");
+ 
   const apiKeyButton = section.querySelector("#apiKey");
-  chatButton.addEventListener("click", () =>
-    navigateTo("/panel", "properties")
-  );
   apiKeyButton.addEventListener("click", () =>
-    navigateTo("/password", "properties")
+    navigateTo("/apiKeyPage", "properties")
   );
 
   return section;
