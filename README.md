@@ -30,12 +30,17 @@ en [Dataverse](https://github.com/CB97103/DEV012-dataverse "Dataverse"),  la cua
 
 #### Prototipo de baja fidelidad
 
-Se realizo un prototipo en baja fidelidad 
-<img id="prototipo baja fidelidad" src="./src/media/Prototipo.jpg" width="600px" />
+
+Se comenzó creando el prototipo para móvil, lo que facilitó la comprensión de las necesidades de la usuaria y la forma en que se desplazaría por la aplicación.
+
+<img id="prototipo baja fidelidad" src="./src/media/Prototipo BF.jpg" width="600px" />
 
 #### Prototipo de alta fidelidad
 
-<img id="prototipo alta fidelidad" src="./src/media/Prototipo BF.jpg" width="600px" />
+
+Para el prototipo en alta fidelidad, se ha definido una paleta de colores distintiva que será característica de la página.
+
+<img id="prototipo alta fidelidad" src="./src/media/Prototipo.jpg" width="600px" />
 
 ## 4. Funcionalidades
 
