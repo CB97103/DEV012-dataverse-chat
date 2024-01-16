@@ -15,8 +15,8 @@ import { navigateTo } from "../router.js";
 
 const createChatMessage = () => {
   const section = `<p class="computeStats"></p>
-  <p id="noResultsFound"></p>`; // Creates a template string
-  const nodoP = document.createElement("section"); // Creates a Nodo
+  <p id="noResultsFound"></p>`; 
+  const nodoP = document.createElement("section"); 
   nodoP.innerHTML = section;
   nodoP.classList.add("sectionComputeStats");
 

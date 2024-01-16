@@ -1,14 +1,12 @@
 export const navBar = () => {
-  const htmlNav = ` 
-  <label for="btnMenu">
+  const htmlNav = `<label for="btnMenu">
   <img src="../media/iconoMenu.png" class="menuIcon"/>
   </label>
   <input type="checkbox" id="btnMenu">
-  <div class="firstContainer">
-  <div class="secondContainer">
- <nav> 
+  <div class="backgroundMenu">
+  <div class="menu">
  
-  <label for="genre"></label>
+ <label for="genre"></label>
   <select id="genre" data-testid="select-filter" name="genre">
     <option disabled selected value="">Genero</option>
     <option value="Acción">Acción</option>
@@ -65,15 +63,12 @@ export const navBar = () => {
     <option value="desc">Descendente</option>
   </select>
   <button id="button" data-testid="button-clear">Limpiar</button>
- 
-  </nav> 
-  <label for="btnMenu">
+ <label for="btnMenu">
   <img src="../media/cerrar.png" id="closeMenu"/>
   </label>
   </div>
   </div>
-  <nav class="menuHome">
- <button id="apiKey" data-testid="api-key">Api Key</button>
+  <button id="apiKey" data-testid="api-key">Api Key</button>
  <div class=inputGroup>
     <input
       type="search"
@@ -81,9 +76,10 @@ export const navBar = () => {
       placeholder="Buscar película..."/>
       <img id="magnifyingGlassIcon" src="./media/iconoLupa.png">
       </div>
-</nav>`; 
+  
+  `; 
 
-  const nodoNavB = document.createElement('nav'); // Creates a Nodo
+  const nodoNavB = document.createElement('nav'); 
   nodoNavB.innerHTML = htmlNav;
   nodoNavB.classList.add('navComponent');
   return nodoNavB;

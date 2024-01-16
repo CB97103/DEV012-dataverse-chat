@@ -31,11 +31,12 @@ h1 {
 
 /* NAV COMPONENT */
 
-.menuHome {
+.navComponent {
   background-color: #ec004a;
   display: flex;
   justify-content: right;
   padding-right: 150px;
+  position: relative;
 }
 .menuIcon {
   float: left;
@@ -78,7 +79,7 @@ h1 {
   font-weight: bold;
   border: none;
   color: #ec004a;
-  background-color: white;
+  background-color: #ffffff;
   padding: 8px 15px 8px 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
   border-radius: 5px;
@@ -86,28 +87,27 @@ h1 {
   cursor: pointer;
 }
 #apiKey:hover {
-  color: white;
-  background-color: #ec004a;
+    background-color: #fcfcfc;
 }
 
 /* NAV COMPONENT LATERAL*/
 
-.firstContainer {
+.backgroundMenu  {
   position: absolute;
-  background-color: #fbebee;
+  background-color: #fffcfc;
   width: 100%;
   height: 80vh;
-  top: 248px;
+  top: 60px;
   left: 0;
   transition: all 500ms ease;
   opacity: 0;
   visibility: hidden;
 }
-#btnMenu:checked ~ .firstContainer {
+#btnMenu:checked ~ .backgroundMenu {
   opacity: 1;
   visibility: visible;
 }
-.secondContainer {
+.menu {
   width: 100%;
   max-width: 280px;
   height: 80vh;
@@ -116,20 +116,20 @@ h1 {
   transition: all 500ms ease;
   transform: translateX(-100%);
 }
-#btnMenu:checked ~ .firstContainer .secondContainer {
+#btnMenu:checked ~ .backgroundMenu .menu {
   transform: translateX(0%);
 }
-.secondContainer nav {
+.menu nav {
   transform: translateY(15%);
 }
-.secondContainer nav select,
+.menu select,
 button {
   display: block;
-  padding: 20px;
+  padding: 10px;
   border-left: 5px solid transparent;
   transition: all 400ms ease;
 }
-.secondContainer nav select:hover {
+.menu select:hover {
   border-left: 5px solid #ec004a;
   transition: all 400ms ease;
 }
@@ -141,37 +141,32 @@ button {
   top: 15px;
   cursor: pointer;
 }
-
 label {
-  padding: 5px;
+  padding: 10px;
   border: none;
 }
 select {
   color: black;
-  font-size: 18px;
+  font-size: 16px;
   background-color: #ffffff;
-  border: 0;
-  border-radius: 5px;
+  border: none;
+  border-radius: 8px;
   outline: none;
 }
-select[name="year"] {
-  padding: 8px 12px 8px 12px;
-}
 button {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
   border: none;
-  color: #ec004a;
-  background-color: #ffffff;
-  padding: 8px 15px 8px 15px;
+  color: #ffffff;
+  background-color: #ec004a;
+  padding: 10px 16px 10px 16px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
   border-radius: 5px;
   margin: 40px 0px 40px 80px;
   cursor: pointer;
 }
 button:hover {
-  color: white;
-  background-color: #ec004a;
+  background-color: #f7004e;
 }
 
 /* SECONDARY NAV COMPONENT */
@@ -187,24 +182,14 @@ button:hover {
   height: 40px;
   display: flex;
   margin-left: 100px;
-}
-
-/*HOME CHAT MESSAGES------------------------*/
-
-.chatMss {
-  font-size: 19px;
-  color: white;
-  padding: 10px;
-  background-color: #ec004a;
-  display: flex;
-  justify-content: center;
+  cursor: pointer;
 }
 
 /* COMPUTE STATS */
 
 .computeStats {
   font-size: 15px;
-  color: rgb(0, 0, 0);
+  color: #000000;
   text-align: left;
   margin: 30px 0px 0px 250px;
 }
@@ -244,7 +229,7 @@ img {
   max-height: 260px;
   border-radius: 10px;
 }
-.texto {
+.cardsText {
   position: absolute;
   top: 22px;
   left: 203px;
@@ -301,7 +286,7 @@ dd[itemprop="year"] {
   align-items: center;
 }
 .chatBox {
-  width: 845px;
+  width: 850px;
   height: 577px;
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
@@ -320,35 +305,35 @@ dd[itemprop="year"] {
   padding: 15px;
 }
 .user img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
   object-position: center top 20px; 
   border-radius: 50%;
 }
 .user h4 {
-  color: white;
+  color: #ffffff;
   padding: 18px;
 }
 .chats {
   width: 100%;
   padding: 0 15px;
-  color: white;
+  color: #ffffff;
   position: relative;
   font-size: 18px;
   overflow-y: auto;
 }
 .userMessages {
-  color: black;
+  color: #000000;
   width: 50%;
   word-wrap: break-word;
-  background-color: #ececec;
+  background-color: #fbfbfb;
   padding: 10px 15px 10px 15px;
   border-radius: 10px;
   margin: 25px 5px;
 }
 .AIsResponse {
-  color: white;
+  color: #ffffff;
   width: 50%;
   word-wrap: break-word;
   background-color: #ec004a;
@@ -367,16 +352,20 @@ dd[itemprop="year"] {
   bottom: 0;
 }
 .chatInputForm input {
-  width: 84%;
+  width: 87%;
   height: 100%;
   font-size: 20px;
   text-align: start;
-  color: rgb(0, 0, 0);
-  background-color: #f3f3f3;
+  color: #000000;
+  background-color: #fbfbfb;
   border: none;
   outline: none;
   border-radius: 30px;
-  padding: 0 30px;
+  padding: 0 20px;
+}
+.sendButton img {
+  width: 100%;
+  height: 100%;
 }
 .sendButton {
   width: 40px;
@@ -394,31 +383,33 @@ dd[itemprop="year"] {
 .sendButton:active {
   transform: scale(0.85);
 }
-.sendButton img {
-  width: 100%;
-  height: 100%;
+.sendButton:hover{
+  background-color: #f7004e;
 }
 
 /* FOOTER COMPONENT */
 
 footer {
-  color: white;
+  color: #ffffff;
   font-size: 20px;
   font-weight: 600;
   margin-top: auto;
-  padding: 20px 20px;
+  padding: 15px 15px;
   background-color: #ec004a;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+footer p{
+font-size: 16px;
+}
 
-/*API VIEW */
+/* API VIEW */
 
 .apiSection {
   display: grid;
   column-gap:  20px;
-  grid-template-columns: 250px 280px ;
+  grid-template-columns: 250px 280px;
   justify-content: center;
   margin: 10px 0px 50px 0px;
 }
@@ -442,15 +433,13 @@ footer {
   color: #ffffff;
   background-color: #ec004a;
   border: none;
-  padding: 15px 5px 15px 5px;
+  padding: 5px 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
   border-radius: 5px;
   cursor: pointer;
 }
 #saveApiButton:hover {
-  color: #ec004a;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-  background-color: #ffffff;
+    background-color: #f7004e;
 }
 #clearApiButton{
   font-size: 17px;
@@ -463,30 +452,30 @@ footer {
    border-radius: 5px;
    cursor: pointer;
  }
+ #clearApiButton:hover{
+   background-color: #fcfcfc;
+ }
 .apiText {
   color: #010101;
-  font-size: 20px;
+  font-size: 18px;
 }
 .apiKeyInput {
-  width: 450px;
+  width: 420px;
   font-size: 18px;
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+  color: #000000;
+  background-color: #ffffff;
   text-align: left;
-  padding: 15px 15px 15px;
+  padding: 15px 20px 15px;
   margin: 0px 6px 0px 10px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
+  border-radius: 25px;
   outline: none;
   border: 0;
 }
 
-
-
 /* DETAILS VIEW */
 
 .descriptionC {
-  background-color: #ffffff;
   margin: 50px 100px 40px;
   display: grid;
   gap: 20px;
@@ -520,8 +509,12 @@ footer {
   line-height: 25px;
 }
 .detailsMovie {
+  width: 310px;
+  height: 230px;
+  border-radius: 20px;
   grid-area: details;
   padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
 }
 .detailsMovie h3 {
   color: #ec004a;
@@ -540,17 +533,140 @@ footer {
 /* ERROR VIEW */
 
 .errorSection {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 400px 200px 100px;
   justify-content: center;
-  margin: 70px;
+  margin: 20px 0px 73px;
+  grid-template-areas:
+    "errorTitle . errorImg"
+    "errorpf . errorImage"
 }
-.errorMessage {
+.errorTitle {
+  grid-area: errorTitle;
+  color: #ec004a;
   margin: 80px 0px 40px 0px;
+  grid-column: span 2;
+}
+.errorSection p{
+  grid-area: errorpf;
+  width: 400px;
+  font-size: 16px;
+  grid-row: 2;
+  grid-column: 1;
+  margin-right: 20px;
 }
 .errorImg {
+  grid-area: errorImg;
   width: 500px;
   height: 500px;
+  grid-column: 2/3; 
+  grid-row: 2/3;
 }
 
-/* PANEL VIEW */
+@media (max-width: 412px) {
+  header{
+    height: 20px;
+    width: 100%;
+  }
+  #logo {
+    max-height: 70px;
+    max-width: 70px;
+    position: absolute;
+    left: 5px;
+    top: 1px;
+  }
+  h1 {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+  .navComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  .computeStats{
+    display: flex;
+justify-content: center;
+  }
+
+  /* CARDS COMPONET */ 
+  .itemContainer{
+    width: 380px;
+    height: 236px;
+    display: flex;
+    flex-direction: column;
+  }
+  .itemContainer img{
+    height: 236px;
+    width: 168px;
+  }
+  .cardsText{
+    top: 5px;
+    left: 181px;
+    padding-right: 18px;
+  }
+  dd[itemprop="studio"] {
+font-size: 11px;
+  }
+  dd[itemprop="name"] {
+    font-size: 15px;
+  }
+  dd[itemprop="shortDescription"] {
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 2px;
+  }
+  dd[itemprop="genre"]{
+    font-size: 12px;
+    top: 172px;
+}
+dd[itemprop="year"]{
+  left: 144px;
+  top: 200px;
+  font-size: 12px;
+}
+
+ /* DETAILS VIEW */
+
+.detailsImage{
+  width: 340px;
+  height: 453px;
+  align-items: center;
+}
+.chatContainer{
+  transform: translate(5px, 82px);
+}
+.user h4{
+  font-size: 16px;
+}
+.chatInputForm input{
+  width: 68%;
+}
+/* API KEY VIEW */
+ /* ERROR SECTION */
+
+ .errorSection{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px 40px;
+  justify-content: center;
+ }
+ 
+ 
+ /* SECONNDARY NAV COMPONENT*/ 
+.imgHome{
+  flex-direction: row;
+}
+
+/* NAV LATERAL */
+.menu{
+  max-width: 414px;
+}
+.menu select,
+button {
+  display: flex;
+flex-direction: column;
+}
+}

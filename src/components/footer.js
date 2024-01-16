@@ -1,6 +1,6 @@
 export const footer = () => {
-  const htmlFooter = `<p>Desarrollado por Gineth G</p>`; //template string
-  const nodoFooter = document.createElement('footer'); //Nodo
+  const htmlFooter = `<p>Desarrollado por Gineth G</p>`; 
+  const nodoFooter = document.createElement('footer');
   nodoFooter.innerHTML = htmlFooter;
   nodoFooter.classList.add('footer');
 

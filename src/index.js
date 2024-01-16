@@ -12,7 +12,6 @@ const routes = {
   '/apiKeyPage': apiKeyPage,
   '/details': details,
 };
-// itera sobre el dataset y se le da clave dinamica al objeto routes
 
 // Assign the routes
 const viewContainer = document.getElementById('root');

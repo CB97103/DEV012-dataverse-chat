@@ -26,7 +26,7 @@ export const apiKeyPage = () => {
   section.appendChild(apiKeyView());
   section.appendChild(footer());
 
-  const homeButton = section.querySelector('.secondaryNav');
+  const homeButton = section.querySelector('.imgHome');
   homeButton.addEventListener('click', () => navigateTo('/'));
 
   const validateApiKey = /^(?=(?:.*[a-z]){2})(?=.*-)(?=(?:.*[a-zA-Z0-9]){48}).+$/;

@@ -13,11 +13,11 @@ export const chatIA = () => {
    </button>  
    </form>
    </div>
-      </div>`; //template string
+      </div>`;
 
-  const nodoChatIA = document.createElement('section'); //Nodo
+  const nodoChatIA = document.createElement("section");
   nodoChatIA.innerHTML = htmlChatIA;
-  nodoChatIA.classList.add('chatIA');
+  nodoChatIA.classList.add("chatIA");
 
   return nodoChatIA;
 };

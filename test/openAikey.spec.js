@@ -1,22 +1,30 @@
 // IMPORTA LA  FUNCIÓN QUE VOY A PROBAR
-import { chatCompletions } from '../src/lib/openAiKey';
+import { chatCompletions } from "../src/lib/openAiKey";
 
 // Crear un mock de la respuesta que esperaría obtener de los servidores de openAI
-const openAIResponse = jest.fn().mockResolvedValueOnce({ choices: [{ message: "foo" }] });
+const openAIResponse = jest.fn();
 
-// HACER UNA IMPLEMENTACIÓN FALSA DE FETCH
+// HACE UNA IMPLEMENTACIÓN FALSA DE FETCH
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: openAIResponse,
-  }),
+  })
 );
 
-// IMPLEMENTAR SUIT DE TEST
-describe("Validate  open AI endpoint", () => {
-  it("La API es llamada con los datos requeridos", () => {
-    const messages = [{ role: "user", content: "foo" }];
+// IMPLEMENTA SUIT DE TEST
+describe("Ensure the OpenAI endpoint is properly validated", () => {
+  it("Confirming that the API is called with the required data", () => {
+    const body = {
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "assistant",
+          content: "¡hola!",
+        },
+      ],
+    };
 
-    chatCompletions("918273", messages);
+    chatCompletions("918273", body);
     expect(global.fetch).toBeCalledWith(
       "https://api.openai.com/v1/chat/completions",
       {
@@ -25,15 +33,12 @@ describe("Validate  open AI endpoint", () => {
           Authorization: `Bearer 918273`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          model: "gpt-3.5-turbo",
-          messages
-        }),
-      },
+        body: JSON.stringify(body),
+      }
     );
   });
 
-  it("Valida el formato de respuesta", () => {
+  it("Validates the response format", () => {
     const response = {
       choices: [
         {
@@ -44,13 +49,15 @@ describe("Validate  open AI endpoint", () => {
         },
       ],
     };
-
+    // const responseJSON = JSON.stringify(response);
     openAIResponse.mockResolvedValueOnce(response);
 
     return chatCompletions("918273", [{ role: "user", content: "foo" }]).then(
       (resolved) => {
-        expect(resolved).toEqual(response);
-      },
+        resolved.json().then(function (result) {
+          expect(result).toEqual(response);
+        });
+      }
     );
   });
 });

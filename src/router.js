@@ -1,4 +1,4 @@
-/* En este archivo vas a manejar el enrutamiento de tu aplicación */
+// Enrutamiento de la aplicación
 
 // hace referencia al objeto que mapea las ROUTES del sitio.
 let ROUTES = {};
@@ -41,12 +41,15 @@ const renderView = (pathname, properties = {}) => {
 //Crea transiciones de página sin realizar solicitudes al servidor para cargar nuevas páginas completas.
 export const navigateTo = (pathname, properties = {}) => {
   // update window history with pushState
-  const URLvisited = `${window.location.origin}${pathname}`; // our Hostname would be localhost:3000
+  const URLvisited = `${window.location.origin}${pathname}`; 
   history.pushState({}, '', URLvisited);
   // render the view with the pathname and props
   renderView(pathname, properties);
 };
 
+window.addEventListener('popstate', () => {
+  onURLChange(window.location.pathname);
+});
 export const onURLChange = (location) => {
   renderView(location);
 };
