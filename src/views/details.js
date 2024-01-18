@@ -81,7 +81,7 @@ export const details = () => {
       messages: [
         {
           role: "system",
-          content: `Actua como un personaje principal de la película ${movieIdentApiData.name} presentate una vez y responde las preguntas con sus expresiones`,
+          content: `Actua como un personaje principal de la película ${movieIdentApiData.name} presentate una vez y responde las preguntas`,
         },
         {
           role: "user",

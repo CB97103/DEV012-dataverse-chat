@@ -284,6 +284,7 @@ dd[itemprop="year"] {
   display: flex;
   justify-content: right;
   align-items: center;
+  height: 100px;
 }
 .chatBox {
   width: 850px;
@@ -291,10 +292,10 @@ dd[itemprop="year"] {
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 40px 40px 40px 20px;
   position: relative;
-  transform: translate(-57px, -555px);
+  transform: translate(-57px, -306px);
 }
 .user {
   display: flex;
@@ -663,6 +664,7 @@ dd[itemprop="year"]{
 /* NAV LATERAL */
 .menu{
   max-width: 414px;
+  z-index: 100;
 }
 .menu select,
 button {

@@ -46,10 +46,6 @@ export const navigateTo = (pathname, properties = {}) => {
   // render the view with the pathname and props
   renderView(pathname, properties);
 };
-
-window.addEventListener('popstate', () => {
-  onURLChange(window.location.pathname);
-});
 export const onURLChange = (location) => {
   renderView(location);
 };
